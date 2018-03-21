@@ -7,8 +7,18 @@ A relational subject-oriented computational engine.
 
 The engine is composed of different layers, each layer wrapping around the previous one, adding layers of abstraction.
 
-#### Datastructure
-The core datastructure is a linked-list, where elements can be linked into multiple lists. You could think of it as lisp in higher dimensions. The datastructure is also append only, variables are streams in time.
+#### Storage
+The core datastructure consists of `Nodes`. A `Node` can be an `Atom`, which is an atomic value such as a string, number or boolean, or It can be a `List`, which contains other `Nodes`.
+
+More Formally:
+```
+Node := Atom | List
+Atom := String | Number | Boolean
+List := [Node, Node .... nth]
+```
+A list can contain the same node twice, and nodes can be inside multiple lists;
+
+The storage is persistent and append only, meaning that it's possible to query historic values.
 
 #### Composable type system
 On top of the structure we implement a metaobject protocol which implements types. Types are implemented as composable behaviours for entities.
