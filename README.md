@@ -20,6 +20,10 @@ A list can contain the same node twice, and nodes can be inside multiple lists;
 
 The storage is persistent and append only, meaning that it's possible to query historic values.
 
+
+#### Frames, Contexts
+Lists can form frames or contexts which are used for scoping
+
 #### Composable type system
 On top of the structure we implement a metaobject protocol which implements types. Types are implemented as composable behaviours for entities.
 For example a `Set` would be defined using the behaviours `unorderd`, `unique` and `boolean`
